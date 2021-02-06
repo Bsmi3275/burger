@@ -1,0 +1,103 @@
+<!--<div class="container">
+        <div class="row">
+            <br />
+           
+            <div class="col s4">
+                <ul>
+                    {{#each burgers}}
+                    {{#unless devoured}}
+                    {{> burgers/burger-block}}
+                    {{/unless}}
+                    {{/each}}
+                    <br />
+                </ul>
+            </div>
+
+
+            <div class="col s8 card-panel" id="card">
+                <div class="col s6">
+                    <h4 class="header white-text"><b>DEVOURED:</b></h4>
+                </div>
+                <div class="col s6 specs">
+                    <ul>
+                        <Insert DEVOURED here>
+                        {{#each burgers}}
+                            {{#unless devoured}}
+                                <li>
+                                    {{burger_name}}
+                                </li>
+                            {{/unless}}
+                        {{/each}}
+                        <br />
+                    </ul>
+                </div>
+            </div>
+
+            <form class = "text-center create-form">
+
+            <div class="form-group">
+                <div id="buga">
+                    <h3>Add a burger to the bunns....:</h3>
+                    <br /><br />
+                    <h5>Type of Burger:</h5>
+                    <input type="text" id="buga" name="burger_name">
+                </div>
+            </div>
+
+            <button class="btn btn-success mb-5" type="submit">Add Burger</button>
+
+            </form>
+
+        </div>
+        
+    </div>-->
+
+    <div class="container">
+        <div class="row">
+            <h1 id="title">Eat the Burger!</h1>
+        </div>
+        <div class="row">
+            <text id="devour-portion">
+                <ol>
+                    <li>
+                    {{burger_name}}
+                        <button class = "devour"
+                        class="btn">
+                        Devour thy burger!!!!!!
+                        </button>
+                    </li>
+                </ol>
+            </text>
+        </div>
+        <div class="row">
+            <text id="undevoured">
+                <!--Insert UNDEVOURED here-->
+                    {{#each burgers}}
+                    {{#unless devoured}}
+                    {{> burgers/burger-block}}
+                    {{/unless}}
+                    {{/each}}
+                    <br />
+            </text>
+        </div>
+        <div class="row">
+            <text id="devoured">
+                <!--Insert DEVOURED here-->
+                        {{#each burgers}}
+                        {{#if devoured}}
+                        <li>
+                        {{burger_name}}
+                        </li>
+                        {{/if}}
+                        {{/each}}
+            </text>
+        </div>
+
+        <form class="text-center create-form">
+            <div class="form-group">
+                <label for="buga">Burger Type:</label>
+                <input type= "text" id ="buga" name="burger_name">
+            </div>
+            <button class="btn">Add Burger</button>
+        </form>
+    </div>
